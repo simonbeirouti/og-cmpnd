@@ -1,6 +1,6 @@
 /* hero section */
 .hero {
-  width: 100vw;
+  width: 100%;
   height: 100svh;
   overflow: hidden;
 }
@@ -241,7 +241,7 @@
   text-transform: none;
   font-family: "Nippo";
   font-weight: 400;
-  font-size: 4rem;
+  font-size: 3rem;
   margin-bottom: 0.5em;
 }
 
@@ -305,7 +305,7 @@
 
 /* abstract */
 .abstract-bg {
-  width: 100vw;
+  width: 100%;
   height: max-content;
   background-color: var(--background-light);
 }
@@ -545,6 +545,11 @@
 
   .case-studies-items-images {
     display: none;
+  }
+
+  .case-studies-items-content .container {
+    padding-left: 1em;
+    padding-right: 1em;
   }
 
   .case-studies-item-inner-img {
