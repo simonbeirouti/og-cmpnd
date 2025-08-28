@@ -19,51 +19,51 @@ gsap.registerPlugin(ScrollTrigger);
 const caseStudiesData = [
   {
     id: 1,
-    title: "Industrial Carbon Capture Revolution",
-    subtitle: "[ Green Energy Integration — Photobioreactor Systems ]",
+    title: "Industrial Carbon Capture",
+    subtitle: "// Green Energy Integration",
     image: "/images/home/bioreactor.jpg",
     alt: "Photobioreactor system with green algae tanks",
-    description: "State-of-the-art photobioreactor systems featuring vibrant green algae cultures positioned next to industrial power plants represent the future of sustainable energy integration. These glowing emerald tanks harness nature's oldest carbon sequester, transforming industrial emissions into clean energy solutions.",
+    description: "Utilise carbon from manufacturing and energy production to grow algae in dedicated photobioreactors. Positioned near emitters, this harnesses Earth's oldest carbon sequesterer to transform emissions into clean solutions.",
     linkText: "Discover the Journey",
     href: "/archive"
   },
   {
     id: 2,
-    title: "Edible Packaging Innovation",
-    subtitle: "[ Sustainable Consumption — Biodegradable Solutions ]",
+    title: "Earth and Human Safe Packaging",
+    subtitle: "// Bio-degradable Solutions",
     image: "/images/home/packaging.jpg",
     alt: "People consuming biodegradable packaging materials",
-    description: "Revolutionary edible packaging made from natural algae-based materials transforms how we think about waste. These colorful, nutritious wrappers decompose naturally into rich soil, creating a circular economy where packaging becomes part of the ecosystem rather than polluting it.",
+    description: "Single-use packaging and plastic-lined containers majorly contribute to global plastic waste. Algae-based alternatives reduce waste, foster sustainability, and maintain food safety standards, benefiting the environment instead of polluting it.",
     linkText: "Read Full Story",
     href: "/archive"
   },
   {
     id: 3,
     title: "Algae-Powered Water Purification",
-    subtitle: "[ Environmental Remediation — Natural Treatment Systems ]",
+    subtitle: "// Environmental Remediation",
     image: "/images/home/treatment.jpg",
     alt: "Water treatment facility using algae for purification",
-    description: "Modern water treatment facilities harness vibrant green algae blooms to actively purify contaminated water, transforming murky polluted sources into crystal-clear streams. This eco-friendly remediation process demonstrates nature's incredible ability to heal our waterways through biological innovation.",
+    description: "Algae-based systems sustainably treat wastewater by removing excess nutrients and pollutants, reducing energy costs and emissions while generating biomass multiple applications. This benefits society through eco-friendly resource recovery, enabling future reuse of treated water for irrigation or industrial purposes.",
     linkText: "Explore the Exhibit",
     href: "/archive"
   },
   {
     id: 4,
-    title: "Algae-to-Fuel Laboratory Breakthrough",
-    subtitle: "[ Renewable Energy — Biomass Conversion Technology ]",
+    title: "Algae to Bio-Fuel",
+    subtitle: "// Renewable Energy",
     image: "/images/home/bio-lab.jpg",
     alt: "Scientists converting algae biomass into biofuel",
-    description: "High-tech laboratories where scientists process vibrant green algae biomass into golden bio-fuel represent the cutting edge of renewable energy. This revolutionary process transforms microscopic organisms into clean fuel for vehicles, offering a sustainable alternative to fossil fuels.",
+    description: "Algae biofuel production harnesses photosynthetic growth to yield biodiesel, bioethanol, and biogas, capturing CO2 and using wastewater as a nutrient source for algae cultivation. This benefits society via renewable energy, emission reductions, and economic growth, while enabling treated water reuse for agriculture and industry.",
     linkText: "Explore the Research",
     href: "/archive"
   },
   {
     id: 5,
-    title: "Regenerative Agriculture Enhancement",
-    subtitle: "[ Ecosystem Restoration — Algae-Based Fertilizers ]",
+    title: "Regenerative Agriculture",
+    subtitle: "// Ecosystem Restoration",
     image: "/images/home/farmer.jpg",
     alt: "Farmer applying algae-based fertilizer to crops",
-    description: "Farmers using algae-derived liquid fertilizers create thriving ecosystems with oversized healthy vegetables, blooming flowers, and diverse wildlife. This regenerative agriculture approach demonstrates how algae-based nutrients can restore soil health while supporting biodiversity and sustainable food production.",
+    description: "Algae-derived fertilisers, created from nutrient-absorbing biomass, enrich soil with organic NPK, boosting crop yields and microbial health. They benefit the planet by reducing chemical runoff and emissions, while aiding farmers with cost-effective, sustainable options for enhanced productivity and soil longevity.",
     linkText: "Learn More",
     href: "/archive"
   }
