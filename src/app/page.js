@@ -293,13 +293,13 @@ export default function Home() {
                 </p>
                 <div className="intro-copy">
                   <p>
-                    Carbon dioxide is part of earths natural cycle but human activity has pushed CO<span className="small">2</span> levels to record highs. Extra CO<span className="small">2</span> traps heat, drives climate change; turning the ocean acidic and disrupting ecosystems.
+                    Carbon dioxide is part of Earth's natural cycle but human activity has pushed CO<span className="small">2</span> levels to record highs. Extra CO<span className="small">2</span> traps heat and drives climate change. Turning the ocean acidic and disrupting ecosystems.
                   </p>
                   <p>
                     Micro and macro algae are natural carbon sinks that can help us sequester carbon. Our aim is to cut carbon emissions by using the oldest sequester of carbon — Algae!
                   </p>
                   <p>
-                    By intertwining it with modern technology and sustainable farming practices; both on land and at sea; we can restore marine forests, regenerate biodiversity and provide scalable, nature-based climate solutions.
+                    By integrating modern technology with sustainable farming on land and sea, we can restore marine forests, enhance biodiversity, and provide scalable, nature-based climate solutions.
                   </p>
                 </div>
               </div>
