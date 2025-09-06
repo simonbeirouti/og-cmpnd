@@ -1,5 +1,6 @@
 "use client";
 // import Link from "next/link";
+import Image from "next/image";
 
 import "./Footer.css";
 
@@ -12,7 +13,7 @@ const Footer = () => {
         <div className="container">
           <div className="footer-content">
             <div style={{ width: "100%" }}>
-              <h3 style={{ marginBottom: "4em", marginLeft: "1em" }}>
+              <h3 className="footer-copy">
                 A brief journey into carbon sequestration to grow algae.
               </h3>
             </div>

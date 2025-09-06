@@ -16,7 +16,7 @@ export const metadata = {
     siteName: "Compound",
     images: [
       {
-        url: "/images/home/industry.jpg",
+        url: "/home/industry.jpg",
         width: 1200,
         height: 630,
         alt: "Compound - Regenerate",
@@ -29,7 +29,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Compound - Regenerate",
     description: "A regeneration focused business that will sequester carbon, create biomass and more.",
-    images: ["/images/home/industry.jpg"],
+    images: ["/home/industry.jpg"],
     creator: "@cmpnd",
     site: "@cmpnd",
   },

@@ -136,21 +136,45 @@
   font-size: 2rem;
 }
 
-/* .prompt-example .prompt-example-header h4 {
-  width: 50%;
+.small {
+  font-size: 0.5em;
+  position: relative;
+  top: 0.1em;
 }
 
-.prompt-example-results {
-  margin-top: 2em;
+/* Founders Section */
+.founders-section {
+  width: 100%;
+  height: 100svh;
+  background-color: var(--background);
+  padding: 4em 0;
   display: flex;
-  gap: 2em;
+  align-items: center;
+  justify-content: center;
 }
 
-.prompt-example-result-item {
+.founders-container {
+  width: 50%;
+  text-align: center;
+}
+
+.founders-header h4 {
+  margin-bottom: 3em;
+  text-align: center;
+}
+
+.founders-grid {
+  display: flex;
+  gap: 3em;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.founder-item {
   flex: 1;
 }
 
-.prompt-example-result-item-img {
+.founder-img {
   position: relative;
   width: 100%;
   aspect-ratio: 1;
@@ -165,7 +189,20 @@
     0 90%,
     0% 30%
   );
-} */
+}
+
+.founder-info {
+  text-align: center;
+}
+
+.founder-info h4 {
+  margin-bottom: 0.5em;
+}
+
+.founder-info p {
+  color: #726755;
+  font-size: 0.9rem;
+}
 
 /* case studies */
 .case-studies {
@@ -241,7 +278,7 @@
   text-transform: none;
   font-family: "Nippo";
   font-weight: 400;
-  font-size: 3rem;
+  font-size: 2rem;
   margin-bottom: 0.5em;
 }
 
@@ -474,6 +511,26 @@
   letter-spacing: -0.1rem;
 }
 
+/* Hero SDG Images - Desktop */
+.hero-sdg {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  margin-left: 0.3rem;
+  flex-wrap: wrap;
+}
+
+.hero-sdg img {
+  width: 120px !important;
+  height: 120px !important;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 @media (max-width: 900px) {
   .hero .container {
     padding: 3em 2em;
@@ -506,17 +563,36 @@
     font-size: 1.5rem;
   }
 
-  /* .prompt-example {
+  .prompt-example {
     margin-top: 6em;
   }
 
-  .prompt-example-results {
-    flex-direction: column;
+  /* Founders Section Mobile */
+  .founders-section {
+    padding: 2em 1em;
+    height: auto;
   }
 
-  .prompt-example .prompt-example-header h4 {
+  .founders-container {
     width: 100%;
-  } */
+  }
+
+  .founders-header h4 {
+    margin-bottom: 2em;
+  }
+
+  .founders-grid {
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  .founder-img {
+    width: calc(100vw - 2em);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    aspect-ratio: 1;
+  }
 
   .case-studies,
   .works {
@@ -606,4 +682,19 @@
   .project-title h2 {
     letter-spacing: -0.1rem;
   }
+
+  /* Hero SDG Images - Mobile */
+  .hero-sdg {
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-sdg img {
+    width: 75px !important;
+    height: 75px !important;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
 }

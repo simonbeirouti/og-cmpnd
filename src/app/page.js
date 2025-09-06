@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 // import Link from "next/link";
+import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
@@ -18,52 +19,56 @@ gsap.registerPlugin(ScrollTrigger);
 
 const caseStudiesData = [
   {
-    id: 1,
-    title: "Industrial Carbon Capture",
-    subtitle: "// Green Energy Integration",
-    image: "/images/home/bioreactor.jpg",
+    title: "Micro & Macro Algae farming",
+    subtitle: "[ C/Farm ]",
+    image: "/home/bioreactor.jpg",
     alt: "Photobioreactor system with green algae tanks",
     description: "Utilise carbon from manufacturing and energy production to grow algae in dedicated photobioreactors. Positioned near emitters, this harnesses Earth's oldest carbon sequesterer to transform emissions into clean solutions.",
     linkText: "Discover the Journey",
     href: "/archive"
   },
   {
-    id: 2,
     title: "Earth and Human Safe Packaging",
-    subtitle: "// Bio-degradable Solutions",
-    image: "/images/home/packaging.jpg",
+    subtitle: "[ C/Labs ]",
+    image: "/home/packaging.jpg",
     alt: "People consuming biodegradable packaging materials",
     description: "Single-use packaging and plastic-lined containers majorly contribute to global plastic waste. Algae-based alternatives reduce waste, foster sustainability, and maintain food safety standards, benefiting the environment instead of polluting it.",
     linkText: "Read Full Story",
     href: "/archive"
   },
+  // {
+  //   title: "Natural Water Purification",
+  //   subtitle: "[ C/Farms ]",
+  //   image: "/home/treatment.jpg",
+  //   alt: "Water treatment facility using algae for purification",
+  //   description: "Natural methods of water purification are essential for maintaining clean water sources. Algae-based systems sustainably treat wastewater by removing excess nutrients and pollutants, reducing energy costs and emissions while generating biomass for multiple applications. This benefits society through eco-friendly resource recovery, enabling future reuse of treated water for irrigation or industrial purposes.",
+  //   linkText: "Explore the Exhibit",
+  //   href: "/archive"
+  // },
   {
-    id: 3,
-    title: "Algae-Powered Water Purification",
-    subtitle: "// Environmental Remediation",
-    image: "/images/home/treatment.jpg",
-    alt: "Water treatment facility using algae for purification",
-    description: "Algae-based systems sustainably treat wastewater by removing excess nutrients and pollutants, reducing energy costs and emissions while generating biomass multiple applications. This benefits society through eco-friendly resource recovery, enabling future reuse of treated water for irrigation or industrial purposes.",
-    linkText: "Explore the Exhibit",
+    title: "Agriculture ",
+    subtitle: "[ C/Labs ]",
+    image: "/home/farmer.jpg",
+    alt: "Farmer applying algae-based fertilizer to crops",
+    description: "Algae-derived fertilisers, created from nutrient-absorbing biomass, enrich soil with organic NPK (Nitrogen, Phosphorus and Potassium), boosting crop yields and microbial health. It benefits the planet, while aiding farmers with cost-effective, sustainable options for enhanced productivity and soil longevity.",
+    linkText: "Learn More",
     href: "/archive"
   },
   {
-    id: 4,
     title: "Algae to Bio-Fuel",
-    subtitle: "// Renewable Energy",
-    image: "/images/home/bio-lab.jpg",
+    subtitle: "[ C/Labs ]",
+    image: "/home/bio-lab.jpg",
     alt: "Scientists converting algae biomass into biofuel",
     description: "Algae biofuel production harnesses photosynthetic growth to yield biodiesel, bioethanol, and biogas, capturing CO2 and using wastewater as a nutrient source for algae cultivation. This benefits society via renewable energy, emission reductions, and economic growth, while enabling treated water reuse for agriculture and industry.",
     linkText: "Explore the Research",
     href: "/archive"
   },
   {
-    id: 5,
-    title: "Regenerative Agriculture",
-    subtitle: "// Ecosystem Restoration",
-    image: "/images/home/farmer.jpg",
-    alt: "Farmer applying algae-based fertilizer to crops",
-    description: "Algae-derived fertilisers, created from nutrient-absorbing biomass, enrich soil with organic NPK, boosting crop yields and microbial health. They benefit the planet by reducing chemical runoff and emissions, while aiding farmers with cost-effective, sustainable options for enhanced productivity and soil longevity.",
+    title: "Community initiatives",
+    subtitle: "[ C/People ]",
+    image: "/home/people.jpg",
+    alt: "People in shallow water farming seaweed",
+    description: "Strengthening coastal blue economies by supporting small-scale farmers, is vital to the success of regenerative systems. By sharing knowledge, skills, and resources, our community initiatives enable coastal growers to adopt sustainable practices that protect marine ecosystems and secure their livelihoods. At the same time, tourism and educational programs raise awareness, create new income streams, and foster deeper connections between people and the ocean.",
     linkText: "Learn More",
     href: "/archive"
   }
@@ -139,9 +144,8 @@ export default function Home() {
           trigger: img,
           start: "top top",
           end: () =>
-            `+=${
-              document.querySelector(".case-studies-item").offsetHeight *
-              (images.length - i - 1)
+            `+=${document.querySelector(".case-studies-item").offsetHeight *
+            (images.length - i - 1)
             }`,
           pin: true,
           pinSpacing: false,
@@ -233,17 +237,43 @@ export default function Home() {
       <div className="app" ref={container}>
         <section className="hero">
           <div className="hero-img">
-            <img src="/images/home/industry.jpg" alt="" />
+            <img src="/home/industry.jpg" alt="" />
           </div>
           <div className="container">
             <div className="hero-copy">
               <div className="hero-copy-col">
                 <ShuffleText as="h3" text="Welcome to" />
                 <ShuffleText as="h1" text="Compound" />
+                <div className="hero-sdg">
+                  <Image
+                    src="/sdg/9.jpg"
+                    alt="SDG 9"
+                    width={120}
+                    height={120}
+                  />
+                  <Image
+                    src="/sdg/12.jpg"
+                    alt="SDG 12"
+                    width={120}
+                    height={120}
+                  />
+                  <Image
+                    src="/sdg/13.jpg"
+                    alt="SDG 13"
+                    width={120}
+                    height={120}
+                  />
+                  <Image
+                    src="/sdg/14.jpg"
+                    alt="SDG 14"
+                    width={120}
+                    height={120}
+                  />
+                </div>
               </div>
               <div className="hero-copy-col">
                 <div className="hero-icon">
-                  <img src="/images/home/hero-abstract-icon.png" alt="" />
+                  <img src="/home/hero-abstract-icon.png" alt="" />
                 </div>
               </div>
             </div>
@@ -263,13 +293,13 @@ export default function Home() {
                 </p>
                 <div className="intro-copy">
                   <p>
-                    Carbon dioxide is a greenhouse gas that is released into the atmosphere during the production of energy and within manufacturing processes. 
+                    Carbon dioxide is part of earths natural cycle but human activity has pushed CO<span className="small">2</span> levels to record highs. Extra CO<span className="small">2</span> traps heat, drives climate change; turning the ocean acidic and disrupting ecosystems.
                   </p>
                   <p>
-                    This process has led to a significant increase in global temperatures, leading to climate change and its associated impacts. Ever increasing, we need to slow down this process and find sustainable solutions. 
+                    Micro and macro algae are natural carbon sinks that can help us sequester carbon. Our aim is to cut carbon emissions by using the oldest sequester of carbon — Algae!
                   </p>
                   <p>
-                    Micro and macro algae are natural carbon sinks that can help remove carbon dioxide from the atmosphere. Our aim is to harness the oldest sequester of carbon with modern solutions to decrease carbon dioxide sent into the atmosphere and grow micro, and macro algae to produce biofuel and other products. 
+                    By intertwining it with modern technology and sustainable farming practices; both on land and at sea; we can restore marine forests, regenerate biodiversity and provide scalable, nature-based climate solutions.
                   </p>
                 </div>
               </div>
@@ -291,8 +321,8 @@ export default function Home() {
 
         <section className="case-studies-items">
           <div className="case-studies-items-content col">
-            {caseStudiesData.map((study) => (
-              <div key={study.id} className={`case-studies-item case-studies-item-${study.id}`}>
+            {caseStudiesData.map((study, index) => (
+              <div key={index} className={`case-studies-item case-studies-item-${index}`}>
                 <div className="container">
                   <h3>{study.title}</h3>
                   <p className="primary">{study.subtitle}</p>
@@ -314,8 +344,8 @@ export default function Home() {
             ))}
           </div>
           <div className="case-studies-items-images col">
-            {caseStudiesData.map((study) => (
-              <div key={study.id} className={`case-studies-img case-studies-img-${study.id}`}>
+            {caseStudiesData.map((study, index) => (
+              <div key={index} className={`case-studies-img case-studies-img-${index}`}>
                 <img src={study.image} alt="" />
                 <div className="hero-img-overlay"></div>
                 {/* <div className="case-studies-img-link">
@@ -328,6 +358,36 @@ export default function Home() {
                 </div> */}
               </div>
             ))}
+          </div>
+        </section>
+
+        <section className="founders-section">
+          <div className="founders-container">
+            <div className="founders-header">
+              <h4>[ Meet the Founders ]</h4>
+            </div>
+            <div className="founders-grid">
+              <div className="founder-item">
+                <div className="founder-img">
+                  <img src="/team/vasu.jpg" alt="Vasundhara Gaur" />
+                  <div className="hero-img-overlay"></div>
+                </div>
+                <div className="founder-info">
+                  <h4>Vasundhara Gaur</h4>
+                  <p>[ C/EO ]</p>
+                </div>
+              </div>
+              <div className="founder-item">
+                <div className="founder-img">
+                  <img src="/team/simon.jpg" alt="Simon Beirouti" />
+                  <div className="hero-img-overlay"></div>
+                </div>
+                <div className="founder-info">
+                  <h4>Simon Beirouti</h4>
+                  <p>[ C/TO ]</p>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 

@@ -94,14 +94,20 @@ footer h3 {
   flex: 1;
 }
 
+.footer-copy {
+  margin-bottom: 4em;
+  margin-left: 1.3em;
+}
+
 @media (max-width: 900px) {
   .footer-content {
     flex-direction: column;
   }
 
-  .footer-col h3 {
+  .footer-copy {
     width: 100%;
     margin-bottom: 1em;
+    margin-left: 0.5em;
     font-size: 1.75rem;
   }
 
