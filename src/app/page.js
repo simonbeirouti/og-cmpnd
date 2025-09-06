@@ -273,7 +273,7 @@ export default function Home() {
               </div>
               <div className="hero-copy-col">
                 <div className="hero-icon">
-                  <img src="/home/hero-abstract-icon.png" alt="" />
+                  <img src="/home/stencil.png" alt="" />
                 </div>
               </div>
             </div>
