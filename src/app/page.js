@@ -23,7 +23,7 @@ const caseStudiesData = [
     subtitle: "[ C/Farm ]",
     image: "/home/bioreactor.jpg",
     alt: "Photobioreactor system with green algae tanks",
-    description: "Utilise carbon from manufacturing and energy production to grow algae in dedicated photobioreactors. Positioned near emitters, this harnesses Earth's oldest carbon sequesterer to transform emissions into clean solutions.",
+    description: "Utilise carbon from the manufacturing and energy industries to grow algae in dedicated photobioreactors. Positioned near emitters, this harnesses Earth's oldest carbon sequesterer to transform emissions into clean solutions.",
     linkText: "Discover the Journey",
     href: "/archive"
   },

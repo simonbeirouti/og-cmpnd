@@ -14,7 +14,7 @@ const Footer = () => {
           <div className="footer-content">
             <div style={{ width: "100%" }}>
               <h3 className="footer-copy">
-                A brief journey into carbon sequestration to grow algae.
+                A journey into carbon sequestration to grow algae.
               </h3>
             </div>
             {/* <div className="footer-col">
