@@ -74,6 +74,34 @@ const caseStudiesData = [
   }
 ];
 
+const heroData = {
+  mainImage: "/home/industry.jpg",
+  alt: "Industrial landscape showcasing sustainable technology",
+  sdgImages: [
+    { src: "/sdg/9.jpg", alt: "SDG 9", width: 120, height: 120 },
+    { src: "/sdg/12.jpg", alt: "SDG 12", width: 120, height: 120 },
+    { src: "/sdg/13.jpg", alt: "SDG 13", width: 120, height: 120 },
+    { src: "/sdg/14.jpg", alt: "SDG 14", width: 120, height: 120 }
+  ]
+};
+
+const foundersData = [
+  {
+    name: "Vasundhara Gaur",
+    role: "[ C/EO ]",
+    image: "/team/vasu.jpg",
+    alt: "Vasundhara Gaur",
+    description: "Floats in water (can sink), designs for the commons. Vasundhara flows between creativity and strategy, turning bold ideas into solutions that uplift people and nature."
+  },
+  {
+    name: "Simon Beirouti",
+    role: "[ C/TO ]",
+    image: "/team/simon.jpg",
+    alt: "Simon Beirouti",
+    description: "Swims with the waves, builds with purpose. Simon loves every creature big or small. He blends multiple facets of technology and nature into building ecosystems that help the planet thrive."
+  }
+];
+
 const cSectionsData = [
   {
     title: "[ C/Labs ]",
@@ -178,67 +206,6 @@ export default function Home() {
     { scope: container }
   );
 
-  // handles carousel slide transitions with clip-path animations
-  // useGSAP(
-  //   () => {
-  //     if (typeof window === "undefined") return;
-
-  //     const projects = gsap.utils.toArray(".project");
-
-  //     ScrollTrigger.create({
-  //       trigger: ".carousel",
-  //       start: "top top",
-  //       end: `+=${window.innerHeight * (projects.length - 1)}`,
-  //       pin: true,
-  //       pinSpacing: true,
-  //       scrub: 1,
-  //       invalidateOnRefresh: true,
-  //       onUpdate: (self) => {
-  //         const progress = self.progress * (projects.length - 1);
-  //         const currentSlide = Math.floor(progress);
-  //         const slideProgress = progress - currentSlide;
-
-  //         if (currentSlide < projects.length - 1) {
-  //           gsap.set(projects[currentSlide], {
-  //             clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-  //           });
-
-  //           const nextSlideProgress = gsap.utils.interpolate(
-  //             "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-  //             "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-  //             slideProgress
-  //           );
-
-  //           gsap.set(projects[currentSlide + 1], {
-  //             clipPath: nextSlideProgress,
-  //           });
-  //         }
-
-  //         projects.forEach((project, index) => {
-  //           if (index < currentSlide) {
-  //             gsap.set(project, {
-  //               clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-  //             });
-  //           } else if (index > currentSlide + 1) {
-  //             gsap.set(project, {
-  //               clipPath: "polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%)",
-  //             });
-  //           }
-  //         });
-  //       },
-  //     });
-
-  //     gsap.set(projects[0], {
-  //       clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-  //     });
-
-  //     return () => {
-  //       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-  //     };
-  //   },
-  //   { scope: container }
-  // );
-
   return (
     <ReactLenis
       root
@@ -255,7 +222,7 @@ export default function Home() {
       <div className="app" ref={container}>
         <section className="hero">
           <div className="hero-img">
-            <img src="/home/industry.jpg" alt="" />
+            <img src={heroData.mainImage} alt={heroData.alt} />
           </div>
           <div className="container">
             <div className="hero-copy">
@@ -263,30 +230,15 @@ export default function Home() {
                 <ShuffleText as="h3" text="Welcome to" />
                 <ShuffleText as="h1" text="Compound" />
                 <div className="hero-sdg">
-                  <Image
-                    src="/sdg/9.jpg"
-                    alt="SDG 9"
-                    width={120}
-                    height={120}
-                  />
-                  <Image
-                    src="/sdg/12.jpg"
-                    alt="SDG 12"
-                    width={120}
-                    height={120}
-                  />
-                  <Image
-                    src="/sdg/13.jpg"
-                    alt="SDG 13"
-                    width={120}
-                    height={120}
-                  />
-                  <Image
-                    src="/sdg/14.jpg"
-                    alt="SDG 14"
-                    width={120}
-                    height={120}
-                  />
+                  {heroData.sdgImages.map((sdg, index) => (
+                    <Image
+                      key={index}
+                      src={sdg.src}
+                      alt={sdg.alt}
+                      width={sdg.width}
+                      height={sdg.height}
+                    />
+                  ))}
                 </div>
               </div>
               <div className="hero-copy-col">
@@ -409,28 +361,19 @@ export default function Home() {
               <h4>[ Meet the Founders ]</h4>
             </div>
             <div className="founders-grid">
-              <div className="founder-item">
-                <div className="founder-img">
-                  <img src="/team/vasu.jpg" alt="Vasundhara Gaur" />
-                  <div className="hero-img-overlay"></div>
+              {foundersData.map((founder, index) => (
+                <div key={index} className="founder-item">
+                  <div className="founder-img">
+                    <img src={founder.image} alt={founder.alt} />
+                    <div className="hero-img-overlay"></div>
+                  </div>
+                  <div className="founder-info">
+                    <h4>{founder.name}</h4>
+                    <p>{founder.role}</p>
+                    <p>{founder.description}</p>
+                  </div>
                 </div>
-                <div className="founder-info">
-                  <h4>Vasundhara Gaur</h4>
-                  <p>[ C/EO ]</p>
-                  <p>Floats in water (can sink), designs for the commons. Vasundhara flows between creativity and strategy, turning bold ideas into solutions that uplift people and nature.</p>
-                </div>
-              </div>
-              <div className="founder-item">
-                <div className="founder-img">
-                  <img src="/team/simon.jpg" alt="Simon Beirouti" />
-                  <div className="hero-img-overlay"></div>
-                </div>
-                <div className="founder-info">
-                  <h4>Simon Beirouti</h4>
-                  <p>[ C/TO ]</p>
-                  <p>Swims with the waves, builds with purpose. Simon loves every creature big or small. He blends multiple facets of technology and nature into building ecosystems that help the planet thrive.</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
