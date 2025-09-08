@@ -204,6 +204,114 @@
   font-size: 0.9rem;
 }
 
+/* C/Sections */
+.c-section {
+  width: 100%;
+  height: 100svh;
+  background-color: var(--background);
+  padding: 4em 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.c-container {
+  width: 100%;
+  text-align: center;
+}
+
+.c-grid {
+  display: flex;
+  gap: 2em;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  padding: 0 2em;
+}
+
+.c-item {
+  flex: 1;
+  min-width: 0; /* Allow flex items to shrink below content size */
+}
+
+.c-box {
+  border: 1px solid #726755;
+  padding: 2em;
+  text-align: center;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  clip-path: polygon(
+    0 0,
+    80% 0,
+    100% 20%,
+    100% 70%,
+    100% 100%,
+    10% 100%,
+    0 90%,
+    0% 30%
+  );
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.c-box:hover {
+  border-color: var(--foreground);
+}
+
+.c-box-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.c-box:hover .c-box-overlay {
+  opacity: 1;
+  visibility: visible;
+}
+
+.c-box-overlay a {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--foreground);
+}
+
+.c-box-overlay {
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: -0.05rem;
+}
+
+.c-box h4 {
+  margin-bottom: 1em;
+  color: var(--foreground);
+}
+
+.c-box p {
+  color: #726755;
+  font-family: "Nippo";
+  font-size: 1.1rem;
+  line-height: 1.4;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
 /* case studies */
 .case-studies {
   position: relative;
@@ -560,6 +668,8 @@
   }
 
   .intro-copy p {
+    font-family: "Nippo";
+    font-weight: 400;
     font-size: 1.5rem;
   }
 
@@ -592,6 +702,50 @@
     left: 50%;
     transform: translateX(-50%);
     aspect-ratio: 1;
+  }
+
+  /* C/Sections Mobile */
+  .c-section {
+    padding: 2em 1em;
+    height: auto;
+  }
+
+  .c-container {
+    width: 100%;
+  }
+
+  .c-grid {
+    flex-direction: column;
+    gap: 2em;
+    padding: 0 1em;
+  }
+
+  .c-item {
+    width: 100%;
+  }
+
+  .c-box {
+    height: auto;
+    min-height: 280px;
+    clip-path: polygon(
+      0 0,
+      80% 0,
+      100% 20%,
+      100% 70%,
+      100% 100%,
+      10% 100%,
+      0 90%,
+      0% 30%
+    );
+    border-radius: 0;
+  }
+
+  .c-box p {
+    display: block;
+    font-family: "Nippo";
+    font-weight: 400;
+    font-size: 1rem;
+    text-align: left;
   }
 
   .case-studies,

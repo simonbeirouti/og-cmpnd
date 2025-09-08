@@ -38,60 +38,6 @@
 }
 
 @font-face {
-  font-family: "Suisse Intl";
-  src: url("/fonts/suisse-intl/SuisseIntl-Thin.otf");
-  font-weight: 100;
-}
-
-@font-face {
-  font-family: "Suisse Intl";
-  src: url("/fonts/suisse-intl/SuisseIntl-Ultralight.otf");
-  font-weight: 200;
-}
-
-@font-face {
-  font-family: "Suisse Intl";
-  src: url("/fonts/suisse-intl/SuisseIntl-Light.otf");
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: "Suisse Intl";
-  src: url("/fonts/suisse-intl/SuisseIntl-Regular.otf");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: "Suisse Intl";
-  src: url("/fonts/suisse-intl/SuisseIntl-Book.otf");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: "Suisse Intl";
-  src: url("/fonts/suisse-intl/SuisseIntl-Medium.otf");
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: "Suisse Intl";
-  src: url("/fonts/suisse-intl/SuisseIntl-SemiBold.otf");
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: "Suisse Intl";
-  src: url("/fonts/suisse-intl/SuisseIntl-Bold.otf");
-  font-weight: 800;
-}
-
-@font-face {
-  font-family: "Suisse Intl";
-  src: url("/fonts/suisse-intl/SuisseIntl-Black.otf");
-  font-weight: 900;
-}
-
-@font-face {
   font-family: "NeueBit";
   src: url("/fonts/neue-bit/PPNeueBit-Regular.otf");
   font-weight: 400;
@@ -158,7 +104,7 @@ h4 {
 }
 
 p {
-  font-family: "Suisse Intl";
+  font-family: "Nippo";
   font-weight: 400;
   font-size: 1.2rem;
   line-height: 135%;

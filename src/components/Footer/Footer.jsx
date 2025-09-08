@@ -1,6 +1,6 @@
-"use client";
+// "use client";
 // import Link from "next/link";
-import Image from "next/image";
+// import Image from "next/image";
 
 import "./Footer.css";
 
@@ -11,26 +11,17 @@ const Footer = () => {
 
       <footer>
         <div className="container">
-          <div className="footer-content">
-            <div style={{ width: "100%" }}>
-              <h3 className="footer-copy">
-                A journey into carbon sequestration to grow algae.
-              </h3>
-            </div>
-            {/* <div className="footer-col">
-              <div className="footer-sub-col"></div>
-              <div className="footer-sub-col footer-links">
-                <Link href="/archive">
-                  <p>Archive 101</p>
-                </Link>
-                <Link href="/archive">
-                  <p>Archive 102</p>
-                </Link>
-                <Link href="/archive">
-                  <p>Archive 103</p>
-                </Link>
-              </div>
-            </div> */}
+          <div className="footer-top">
+            <h3 className="footer-copy">
+              Designing the future:
+              <br/> 
+              Ocean intelligence x human creativity.
+            </h3>
+          </div>
+          <div className="footer-acknowledgment">
+            <p>
+              Compound acknowledges the people of the Woi wurrung and Boon wurrung language groups of the eastern Kulin Nation on whose unceded lands Compound conducts business on. Compound respectfully acknowledges their Ancestors and Elders, past and present. Compound also acknowledges the Traditional Custodians and their Ancestors of the lands and waters across Australia where we conduct our business.
+            </p>
           </div>
           <div className="footer-row">
             <h1>Compound</h1>

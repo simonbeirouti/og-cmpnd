@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-// import Link from "next/link";
+import Link from "next/link";
 import Image from "next/image";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -65,12 +65,30 @@ const caseStudiesData = [
   },
   {
     title: "Community initiatives",
-    subtitle: "[ C/People ]",
+    subtitle: "[ C/Commons ]",
     image: "/home/people.jpg",
     alt: "People in shallow water farming seaweed",
-    description: "Strengthening coastal blue economies by supporting small-scale farmers, is vital to the success of regenerative systems. By sharing knowledge, skills, and resources, our community initiatives enable coastal growers to adopt sustainable practices that protect marine ecosystems and secure their livelihoods. At the same time, tourism and educational programs raise awareness, create new income streams, and foster deeper connections between people and the ocean.",
+    description: "Strengthening coastal blue economies by supporting small-scale farmers, is vital to the success of regenerative systems. By sharing knowledge, skills, and resources, our community initiatives enable coastal growers to adopt sustainable practices that protect marine ecosystems [ C/Life ] and secure their livelihoods [ C/People ]. At the same time, tourism and educational programs raise awareness, create new income streams, and foster deeper connections between people and the ocean.",
     linkText: "Learn More",
     href: "/archive"
+  }
+];
+
+const cSectionsData = [
+  {
+    title: "[ C/Labs ]",
+    description: "Compound's living laboratory — where we explore and apply the potential of algae across industrial processes. From bioplastics and sustainable composites to food, cosmetics, and beyond, C/Labs transforms micro & macro algae into high-value, scalable solutions. By combining scientific experimentation with design thinking, we develop products and processes that are not only commercially viable but also contribute to a regenerative, low-carbon future.",
+    href: "#"
+  },
+  {
+    title: "[ C/Farm ]",
+    description: "Compound's living laboratory for sustainable seaweed cultivation. Here, we grow micro and macro algae using regenerative farming practices—both on land and at sea—to capture carbon, restore marine ecosystems, and provide high-quality biomass for industrial applications. C/Farm is where nature meets innovation, producing the raw materials that power our bioplastics, composites, food, cosmetics, and other circular solutions.",
+    href: "#"
+  },
+  {
+    title: "[ C/Commons ]",
+    description: "A visionary initiative that flows at the intersection of human livelihoods and ecological vitality, harnessing the power of the blue economy [ C/People ] and biodiversity [ C/Life ] to create shared prosperity. Rooted in the practice that people and nature thrive together, C/Commons transforms bold ideas into scalable solutions that ripple across communities and ecosystems.",
+    href: "#"
   }
 ];
 
@@ -319,6 +337,30 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="c-section">
+          <div className="c-container">
+            <div className="c-grid">
+              {cSectionsData.map((section, index) => (
+                <div key={index} className="c-item">
+                  <div className="c-box">
+                    <h4>{section.title}</h4>
+                    <p>{section.description}</p>
+                    <div className="c-box-overlay">
+                      {section.href === "#" ? (
+                        <h3>Coming Soon</h3>
+                      ) : (
+                        <Link href={section.href}>
+                          <h3>Learn More</h3>
+                        </Link>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="case-studies-items">
           <div className="case-studies-items-content col">
             {caseStudiesData.map((study, index) => (
@@ -375,6 +417,7 @@ export default function Home() {
                 <div className="founder-info">
                   <h4>Vasundhara Gaur</h4>
                   <p>[ C/EO ]</p>
+                  <p>Floats in water (can sink), designs for the commons. Vasundhara flows between creativity and strategy, turning bold ideas into solutions that uplift people and nature.</p>
                 </div>
               </div>
               <div className="founder-item">
@@ -385,6 +428,7 @@ export default function Home() {
                 <div className="founder-info">
                   <h4>Simon Beirouti</h4>
                   <p>[ C/TO ]</p>
+                  <p>Swims with the waves, builds with purpose. Simon loves every creature big or small. He blends multiple facets of technology and nature into building ecosystems that help the planet thrive.</p>
                 </div>
               </div>
             </div>
