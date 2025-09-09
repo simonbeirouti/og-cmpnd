@@ -48,7 +48,8 @@ export async function sendContactEmail(formData) {
 
     await resend.emails.send({
       from: 'Compound <contact@cmpnd.cc>',
-      to: process.env.ADMIN_EMAIL || 'admin@cmpnd.cc',
+      to: [process.env.ADMIN_EMAIL, process.env.ADMIN2_EMAIL],
+      reply_to: email,
       subject: `New Contact Form Submission from ${name || email}`,
       html: adminEmailContent,
     });

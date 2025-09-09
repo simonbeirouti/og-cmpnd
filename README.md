@@ -58,4 +58,5 @@ The project uses Resend for email functionality. Configure your API key in the e
 RESEND_API_KEY="your_api_key_here"
 RESEND_AUDIENCE_ID="your_audience_id_here"
 ADMIN_EMAIL="admin@email.here"
+ADMIN2_EMAIL="admin2@email.here"
 ```
