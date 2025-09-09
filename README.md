@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Compound
 
-## Getting Started
+A modern, interactive website for Compound - an algae-based sustainability company focused on carbon sequestration, sustainable packaging, biofuels, and regenerative agriculture solutions.
 
-First, run the development server:
+## 🚀 Technology Stack
 
+This project is built with Next.js 15 and leverages cutting-edge web technologies for smooth, performant user experiences:
+
+### Core Framework
+
+### Animation & Interaction
+- **GSAP** - Professional-grade animation library for complex scroll-based interactions
+- **@gsap/react** - React hooks for GSAP integration
+- **Lenis** - Smooth scrolling library for enhanced user experience
+- **Lottie** - Vector animations for interactive elements
+
+### Email & Communication
+- **Resend** - Email service for contact forms and notifications
+
+### Installation
+
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd compound
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+### Build for Production
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build
+npm start
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Linting
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm run lint
+```
 
-## Deploy on Vercel
+## 📧 Email Configuration
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The project uses Resend for email functionality. Configure your API key in the environment variables:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```env
+RESEND_API_KEY="your_api_key_here"
+RESEND_AUDIENCE_ID="your_audience_id_here"
+ADMIN_EMAIL="admin@email.here"
+```

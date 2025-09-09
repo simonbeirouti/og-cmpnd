@@ -11,6 +11,7 @@ import Marquee from "@/components/Marquee/Marquee";
 import Footer from "@/components/Footer/Footer";
 import ShuffleText from "@/components/ShuffleText/ShuffleText";
 import GeometricBackground from "@/components/GeometricBackground/GeometricBackground";
+import ContactCTA from "@/components/ContactCTA/ContactCTA";
 
 import "./home.css";
 
@@ -394,11 +395,13 @@ export default function Home() {
             <div className="container">
               <ShuffleText
                 as="h2"
-                text="Nature alongside Modern technologies"
+                text="Stay connected"
                 triggerOnScroll={true}
               />
             </div>
           </div>
+          
+          <ContactCTA />
         </section>
 
         <Footer />

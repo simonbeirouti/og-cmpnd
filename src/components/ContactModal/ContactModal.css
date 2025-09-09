@@ -1,0 +1,291 @@
+/* Contact Modal Styles */
+.contact-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100000001;
+  padding: 2em;
+}
+
+.contact-modal {
+  background: var(--background);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.contact-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em;
+  border-bottom: 1px solid var(--foreground-secondary);
+}
+
+.contact-modal-header h3 {
+  font-family: "NeueBit";
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: var(--foreground);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.contact-modal-close {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--foreground);
+  cursor: pointer;
+  padding: 0.5em;
+  line-height: 1;
+  transition: color 0.3s ease;
+}
+
+.contact-modal-close:hover {
+  color: var(--foreground-secondary);
+}
+
+.contact-form {
+  padding: 2em;
+}
+
+.form-group {
+  margin-bottom: 1.5em;
+}
+
+.form-group label {
+  display: block;
+  font-family: "NeueBit";
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--foreground);
+  text-transform: uppercase;
+  margin-bottom: 0.5em;
+  letter-spacing: 0.05em;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 1em;
+  background: transparent;
+  border: 1px solid var(--foreground-secondary);
+  border-radius: 4px;
+  color: var(--foreground);
+  font-family: "Nippo";
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--foreground);
+}
+
+.form-group input.error,
+.form-group textarea.error {
+  border-color: #d26969;
+  background: rgba(255, 100, 100, 0.1);
+}
+
+.form-group input.error:focus,
+.form-group textarea.error:focus {
+  border-color: #d26969;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.field-error {
+  color: #8b4513;
+  font-family: "Nippo";
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.25em;
+  position: relative;
+}
+
+.checkbox-group input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  top: 0;
+  left: 20px;
+  z-index: 1;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+.checkmark {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: transparent;
+  transition: all 0.3s ease;
+  z-index: 2;
+  display: block;
+}
+
+.checkmark::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid var(--foreground-secondary);
+  border-radius: 3px;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+.checkbox-text {
+  font-family: "Nippo";
+  font-weight: 400;
+  font-size: 1rem;
+  color: var(--foreground-tertiary);
+  line-height: 1.4;
+  cursor: pointer;
+  margin-left: 6px;
+  user-select: none;
+}
+
+.checkbox-group input[type="checkbox"]:checked ~ .checkbox-label .checkmark::before,
+.checkbox-group input[type="checkbox"]:checked + .checkbox-label .checkmark::before {
+  background: var(--foreground);
+  border-color: var(--foreground);
+}
+
+.checkbox-group input[type="checkbox"]:checked ~ .checkbox-label .checkmark::after,
+.checkbox-group input[type="checkbox"]:checked + .checkbox-label .checkmark::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--background);
+  font-size: 14px;
+  font-weight: bold;
+  z-index: 4;
+}
+
+.contact-submit-btn {
+  width: 100%;
+  padding: 1.25em;
+  background: var(--foreground);
+  color: var(--background);
+  border: none;
+  border-radius: 4px;
+  font-family: "NeueBit";
+  font-weight: 600;
+  font-size: 1.125rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1em;
+}
+
+.contact-submit-btn:hover:not(:disabled) {
+  background: var(--foreground-secondary);
+  color: var(--foreground);
+}
+
+.contact-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.submit-message {
+  margin-top: 1em;
+  padding: 1em;
+  border-radius: 4px;
+  font-family: "Nippo";
+  font-size: 1rem;
+  text-align: center;
+}
+
+.submit-message.success {
+  background: rgba(48, 114, 110, 0.2);
+  border: 1px solid var(--foreground-secondary);
+  color: var(--foreground);
+}
+
+.submit-message.error {
+  background: rgba(255, 100, 100, 0.2);
+  border: 1px solid #ff6464;
+  color: #ff6464;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .contact-modal-overlay {
+    padding: 1em;
+  }
+
+  .contact-modal {
+    max-height: 95vh;
+  }
+
+  .contact-modal-header {
+    padding: 1.5em;
+  }
+
+  .contact-modal-header h3 {
+    font-size: 2rem;
+  }
+
+  .contact-form {
+    padding: 1.5em;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    padding: 0.875em;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-modal-header h3 {
+    font-size: 1.75rem;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .checkbox-label {
+    font-size: 0.9rem;
+  }
+}

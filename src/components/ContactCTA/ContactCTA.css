@@ -1,0 +1,195 @@
+/* Contact CTA Styles */
+.contact-cta {
+  width: 100%;
+  background-color: var(--background-light);
+  color: var(--foreground-light);
+  position: relative;
+}
+
+.contact-cta-container {
+  width: 100%;
+  padding: 0 4em;
+}
+
+.contact-cta-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 2em;
+}
+
+.contact-cta-text h3 {
+  font-family: "NeueBit";
+  font-weight: 600;
+  font-size: 3rem;
+  color: var(--foreground-light);
+  margin-bottom: 1em;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+}
+
+.contact-cta-text p {
+  font-family: "Nippo";
+  font-weight: 400;
+  font-size: 1.25rem;
+  color: #726755;
+  line-height: 1.4;
+  max-width: 600px;
+}
+
+.contact-cta-form {
+  width: 100%;
+  max-width: 500px;
+}
+
+.cta-form-group {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.cta-form-group input {
+  flex: 1;
+  padding: 1.25em 1.5em;
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--foreground-light);
+  border-radius: 4px;
+  color: var(--foreground-light);
+  font-family: "Nippo";
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.cta-form-group input:focus {
+  outline: none;
+  border-color: #726755;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.cta-form-group input.error {
+  border-color: #d26969;
+  background: rgba(255, 100, 100, 0.1);
+}
+
+.cta-form-group input.error:focus {
+  border-color: #d26969;
+}
+
+.cta-form-group input::placeholder {
+  color: #726755;
+  opacity: 0.7;
+}
+
+.field-error {
+  color: #8b4513;
+  font-family: "Nippo";
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.cta-submit-btn {
+  padding: 1.25em 2em;
+  background: var(--foreground-light);
+  color: var(--background-light);
+  border: none;
+  border-radius: 4px;
+  font-family: "NeueBit";
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.cta-submit-btn:hover:not(:disabled) {
+  background: #1a3f3d;
+  color: var(--background-light);
+}
+
+.cta-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cta-submit-message {
+  padding: 1em;
+  border-radius: 4px;
+  font-family: "Nippo";
+  font-size: 1rem;
+  text-align: center;
+  margin-top: 1em;
+}
+
+.cta-submit-message.success {
+  background: rgba(37, 89, 86, 0.1);
+  border: 1px solid var(--foreground-light);
+  color: var(--foreground-light);
+}
+
+.cta-submit-message.error {
+  background: rgba(255, 100, 100, 0.1);
+  border: 1px solid #d26969;
+  color: #8b4513;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .contact-cta-container {
+    padding: 0 2em;
+  }
+
+  .contact-cta-content {
+    gap: 1.5em;
+  }
+
+  .contact-cta-text h3 {
+    font-size: 2.25rem;
+  }
+
+  .contact-cta-text p {
+    font-size: 1.125rem;
+  }
+
+  .cta-form-group {
+    flex-direction: column;
+    gap: 0.75em;
+  }
+
+  .cta-form-group input {
+    padding: 1em 1.25em;
+  }
+
+  .cta-submit-btn {
+    padding: 1em 1.5em;
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-cta-container {
+    padding: 0 1.5em;
+  }
+
+  .contact-cta-text h3 {
+    font-size: 2rem;
+  }
+
+  .contact-cta-text p {
+    font-size: 1rem;
+  }
+
+  .cta-form-group input {
+    padding: 0.875em 1em;
+    font-size: 0.9rem;
+  }
+
+  .cta-submit-btn {
+    padding: 0.875em 1.25em;
+    font-size: 0.9rem;
+  }
+}

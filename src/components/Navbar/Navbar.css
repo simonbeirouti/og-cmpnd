@@ -7,7 +7,7 @@
   z-index: 100000000;
   mix-blend-mode: difference;
   display: flex;
-  gap: 2em;
+  justify-content: space-between;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -17,13 +17,25 @@
 }
 
 .navbar-col {
-  flex: 1;
   display: flex;
-  gap: 2emc;
+  align-items: center;
+}
+
+.navbar-col:first-child {
+  flex-shrink: 0;
+}
+
+.navbar-col:last-child {
+  justify-content: flex-end;
 }
 
 .navbar-sub-col {
-  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.nav-items {
+  margin-left: auto;
 }
 
 .logo h3 {
@@ -31,6 +43,30 @@
   font-weight: 400;
   font-size: 2.5rem;
   color: var(--foreground);
+}
+
+.contact-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5em 1em;
+  transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+  background: rgba(255, 246, 193, 0.1);
+  border-radius: 4px;
+}
+
+.contact-btn p {
+  position: relative;
+  top: 0.075rem;
+  font-family: "Nippo";
+  font-weight: 400;
+  font-size: 1.125rem;
+  color: var(--foreground);
+  -webkit-text-stroke: 0.25px var(--foreground);
+  margin: 0;
 }
 
 /* .time p,
@@ -90,6 +126,10 @@
 @media (max-width: 900px) {
   .navbar {
     padding: 2em;
+  }
+
+  .navbar-col:last-child {
+    justify-content: flex-end;
   }
 
   /* .time,

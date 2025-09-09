@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 // import { usePathname, useRouter } from "next/navigation";
 // import dynamic from "next/dynamic";
+import ContactModal from "../ContactModal/ContactModal";
 
 import "./Navbar.css";
 
@@ -13,6 +14,7 @@ import "./Navbar.css";
 
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const lastScrollY = useRef(0);
   // const [time, setTime] = useState("");
   // const pathname = usePathname();
@@ -76,38 +78,35 @@ const Navbar = () => {
   // };
 
   return (
-    <div className={`navbar ${!isVisible ? 'navbar--hidden' : ''}`}>
-      <div className="navbar-col">
-        <div className="navbar-sub-col logo">
-          <Link href="/">
-            <h3>Compound</h3>
-          </Link>
+    <>
+      <div className={`navbar ${!isVisible ? 'navbar--hidden' : ''}`}>
+        <div className="navbar-col">
+          <div className="navbar-sub-col logo">
+            <Link href="/">
+              <h3>Compound</h3>
+            </Link>
+          </div>
+          {/* turn the timer into a CO2 counter */}
+          {/* <div className="navbar-sub-col time">
+            <p>{time}</p>
+          </div> */}
         </div>
-        {/* turn the timer into a CO2 counter */}
-        {/* <div className="navbar-sub-col time">
-          <p>{time}</p>
-        </div> */}
+        <div className="navbar-col">
+          <div className="navbar-sub-col nav-items">
+            <button
+              className="contact-btn"
+              onClick={() => setIsModalOpen(true)}
+            >
+              <p>Contact</p>
+            </button>
+          </div>
+        </div>
       </div>
-      {/* <div className="navbar-col">
-        <div className="navbar-sub-col nav-items">
-          <a href="#intro" onClick={(e) => handleNavigation(e, "intro")}>
-            <p>The Origins</p>
-          </a>
-          <a
-            href="#case-studies"
-            onClick={(e) => handleNavigation(e, "case-studies")}
-          >
-            <p>Highlights</p>
-          </a>
-          <a href="#works" onClick={(e) => handleNavigation(e, "works")}>
-            <p>Innovations</p>
-          </a>
-        </div>
-        <div className="navbar-sub-col music-toggle-wrapper">
-          <MusicToggle />
-        </div>
-      </div> */}
-    </div>
+      <ContactModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
+    </>
   );
 };
 
