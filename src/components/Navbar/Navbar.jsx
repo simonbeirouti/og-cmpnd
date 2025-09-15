@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import ContactModal from "../ContactModal/ContactModal";
+import Socials from "../socials";
 
 import "./Navbar.css";
 
@@ -42,25 +43,6 @@ const Navbar = () => {
       type: 'button',
       label: 'Contact',
       onClick: () => setIsModalOpen(true)
-    }
-  ];
-
-  // Social links array
-  const socialLinks = [
-    {
-      href: 'https://twitter.com',
-      label: 'Twitter',
-      icon: '🐦'
-    },
-    {
-      href: 'https://linkedin.com',
-      label: 'LinkedIn',
-      icon: '💼'
-    },
-    {
-      href: 'https://instagram.com',
-      label: 'Instagram',
-      icon: '📷'
     }
   ];
 
@@ -155,22 +137,7 @@ const Navbar = () => {
             })}
           </nav>
 
-          <div style={{ flex: 1 }} />
-
-          <div className="social-links">
-            {socialLinks.map((social, index) => (
-              <a
-                key={index}
-                href={social.href}
-                className="social-link"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={social.label}
-              >
-                {social.icon}
-              </a>
-            ))}
-          </div>
+          <Socials />
         </div>
       </div>
 

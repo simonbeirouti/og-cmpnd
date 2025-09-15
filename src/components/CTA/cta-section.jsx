@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import ShuffleText from "@/components/ShuffleText/ShuffleText";
 import ContactCTA from "@/components/ContactCTA/ContactCTA";
+import Socials from "@/components/socials";
 
 import "./cta.css"
 
@@ -26,6 +27,9 @@ export default function CTASection() {
                             text="Stay connected"
                             triggerOnScroll={true}
                         />
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', paddingBottom: '2em' }}>
+                        <Socials />
                     </div>
                 </div>
                 <ContactCTA />
