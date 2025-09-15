@@ -1,6 +1,8 @@
 import { Suspense } from "react";
 import ProgressBar from "@/components/ProgressBar/ProgressBar";
 import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
+import CTASection from "@/components/CTA/cta-section";
 
 import "./globals.css";
 
@@ -48,6 +50,8 @@ export default function RootLayout({ children }) {
         </Suspense>
         <Navbar />
         {children}
+        <CTASection />
+        <Footer />
       </body>
     </html>
   );

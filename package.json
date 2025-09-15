@@ -11,13 +11,19 @@
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@studio-freight/react-lenis": "^0.0.47",
+    "contentlayer": "^0.3.4",
+    "date-fns": "^4.1.0",
     "gsap": "^3.12.7",
     "lottie-web": "^5.12.2",
     "next": "^15.5.0",
+    "next-contentlayer": "^0.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^5.4.0",
     "resend": "^6.0.2",
     "split-type": "^0.3.4"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2"
   }
 }

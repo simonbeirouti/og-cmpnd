@@ -5,7 +5,7 @@ import "./Marquee.css";
 
 const ANIMATION_DURATION = 15;
 
-const Marquee = () => {
+const Marquee = ({ text }) => {
   const wrapperRef = useRef(null);
   const animationRef = useRef(null);
   const directionRef = useRef(1);
@@ -97,7 +97,7 @@ const Marquee = () => {
       <div className="marquee-wrapper" ref={wrapperRef}>
         <div className="marquee-content">
           <h1>
-            Carbondioxide is our friend - We just need to harness it - 
+            {text}
           </h1>
         </div>
       </div>

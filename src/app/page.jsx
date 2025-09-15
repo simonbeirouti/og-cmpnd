@@ -8,10 +8,8 @@ import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 import Marquee from "@/components/Marquee/Marquee";
-import Footer from "@/components/Footer/Footer";
 import ShuffleText from "@/components/ShuffleText/ShuffleText";
 import GeometricBackground from "@/components/GeometricBackground/GeometricBackground";
-import ContactCTA from "@/components/ContactCTA/ContactCTA";
 
 import "./home.css";
 
@@ -255,7 +253,7 @@ export default function Home() {
           <div className="geo-bg">
             <GeometricBackground />
           </div>
-          <Marquee />
+          <Marquee text="Carbondioxide is our friend - We just need to harness it - " />
           <div className="intro-container">
             <div className="container">
               <div className="col">
@@ -379,32 +377,6 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="abstract-bg">
-          <div className="strip"></div>
-          <div className="strip"></div>
-          <div className="strip"></div>
-          <div className="strip"></div>
-          <div className="strip"></div>
-          <div className="strip"></div>
-          <div className="strip"></div>
-          <div className="strip"></div>
-        </section>
-
-        <section className="works" id="works">
-          <div className="works-header">
-            <div className="container">
-              <ShuffleText
-                as="h2"
-                text="Stay connected"
-                triggerOnScroll={true}
-              />
-            </div>
-          </div>
-          
-          <ContactCTA />
-        </section>
-
-        <Footer />
       </div>
     </ReactLenis>
   );

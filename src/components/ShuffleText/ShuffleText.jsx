@@ -1,10 +1,11 @@
-// components/ShuffleText/ShuffleText.jsx
 "use client";
 
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitType from "split-type";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ShuffleText = ({
   text,

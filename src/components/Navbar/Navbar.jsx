@@ -2,46 +2,20 @@
 
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
-// import { usePathname, useRouter } from "next/navigation";
-// import dynamic from "next/dynamic";
 import ContactModal from "../ContactModal/ContactModal";
 
 import "./Navbar.css";
 
-// const MusicToggle = dynamic(() => import("../MusicToggle/MusicToggle"), {
-//   ssr: false,
-// });
-
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const lastScrollY = useRef(0);
-  // const [time, setTime] = useState("");
-  // const pathname = usePathname();
-  // const router = useRouter();
-  // const isHomePage = pathname === "/";
-
-  // useEffect(() => {
-  //   const updateTime = () => {
-  //     const now = new Date();
-  //     const timeString = now.toLocaleTimeString("en-US", {
-  //       hour: "numeric",
-  //       minute: "2-digit",
-  //       second: "2-digit",
-  //       hour12: true,
-  //     });
-  //     setTime(timeString);
-  //   };
-
-  //   updateTime();
-  //   const interval = setInterval(updateTime, 1000);
-  //   return () => clearInterval(interval);
-  // }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
         // Scrolling down and past 100px
         setIsVisible(false);
@@ -49,7 +23,7 @@ const Navbar = () => {
         // Scrolling up
         setIsVisible(true);
       }
-      
+
       lastScrollY.current = currentScrollY;
     };
 
@@ -57,51 +31,149 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // const handleNavigation = (event, sectionId) => {
-  //   event.preventDefault();
+  // Dynamic navigation items array
+  const navItems = [
+    {
+      type: 'link',
+      href: '/updates',
+      label: 'Updates'
+    },
+    {
+      type: 'button',
+      label: 'Contact',
+      onClick: () => setIsModalOpen(true)
+    }
+  ];
 
-  //   if (isHomePage) {
-  //     const lenis = window.lenis;
-  //     if (lenis) {
-  //       const element = document.getElementById(sectionId);
-  //       if (element) {
-  //         lenis.scrollTo(element, {
-  //           offset: 0,
-  //           immediate: false,
-  //           duration: 1.5,
-  //         });
-  //       }
-  //     }
-  //   } else {
-  //     router.push(`/#${sectionId}`);
-  //   }
-  // };
+  // Social links array
+  const socialLinks = [
+    {
+      href: 'https://twitter.com',
+      label: 'Twitter',
+      icon: '🐦'
+    },
+    {
+      href: 'https://linkedin.com',
+      label: 'LinkedIn',
+      icon: '💼'
+    },
+    {
+      href: 'https://instagram.com',
+      label: 'Instagram',
+      icon: '📷'
+    }
+  ];
+
+  const handleMobileMenuToggle = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleMobileMenuClose = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleContactClick = () => {
+    setIsModalOpen(true);
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <>
       <div className={`navbar ${!isVisible ? 'navbar--hidden' : ''}`}>
         <div className="navbar-col">
           <div className="navbar-sub-col logo">
-            <Link href="/">
+            <Link href="/" onClick={handleMobileMenuClose}>
               <h3>Compound</h3>
             </Link>
           </div>
-          {/* turn the timer into a CO2 counter */}
-          {/* <div className="navbar-sub-col time">
-            <p>{time}</p>
-          </div> */}
         </div>
         <div className="navbar-col">
           <div className="navbar-sub-col nav-items">
+            {navItems.map((item, index) => {
+              if (item.type === 'link') {
+                return (
+                  <Link key={index} href={item.href} className="contact-btn">
+                    <p>{item.label}</p>
+                  </Link>
+                );
+              } else if (item.type === 'button') {
+                return (
+                  <button
+                    key={index}
+                    className="contact-btn"
+                    onClick={item.onClick}
+                  >
+                    <p>{item.label}</p>
+                  </button>
+                );
+              }
+              return null;
+            })}
+          </div>
+          <div className="navbar-sub-col mobile-menu-btn">
             <button
-              className="contact-btn"
-              onClick={() => setIsModalOpen(true)}
+              className="hamburger-btn"
+              onClick={handleMobileMenuToggle}
+              aria-label="Toggle mobile menu"
             >
-              <p>Contact</p>
+              <span className={`hamburger-line ${isMobileMenuOpen ? 'open' : ''}`}></span>
+              <span className={`hamburger-line ${isMobileMenuOpen ? 'open' : ''}`}></span>
+              <span className={`hamburger-line ${isMobileMenuOpen ? 'open' : ''}`}></span>
             </button>
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      <div className={`mobile-menu-overlay ${isMobileMenuOpen ? 'open' : ''}`}>
+        <div className="mobile-menu-content">
+          <nav className="mobile-nav-items">
+            {navItems.map((item, index) => {
+              if (item.type === 'link') {
+                return (
+                  <Link
+                    key={index}
+                    href={item.href}
+                    className="mobile-nav-link"
+                    onClick={handleMobileMenuClose}
+                  >
+                    {item.label}
+                  </Link>
+                );
+              } else if (item.type === 'button') {
+                return (
+                  <button
+                    key={index}
+                    className="mobile-nav-button"
+                    onClick={handleContactClick}
+                  >
+                    {item.label}
+                  </button>
+                );
+              }
+              return null;
+            })}
+          </nav>
+
+          <div style={{ flex: 1 }} />
+
+          <div className="social-links">
+            {socialLinks.map((social, index) => (
+              <a
+                key={index}
+                href={social.href}
+                className="social-link"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={social.label}
+              >
+                {social.icon}
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
       <ContactModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
