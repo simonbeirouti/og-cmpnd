@@ -786,3 +786,10 @@
   }
 
 }
+
+/* Latest Update Section */
+.latest-update {
+  width: 100%;
+  background-color: var(--background);
+  padding: 2rem 0;
+}

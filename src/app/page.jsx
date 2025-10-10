@@ -10,6 +10,7 @@ import { ReactLenis, useLenis } from "@studio-freight/react-lenis";
 import Marquee from "@/components/Marquee/Marquee";
 import ShuffleText from "@/components/ShuffleText/ShuffleText";
 import GeometricBackground from "@/components/GeometricBackground/GeometricBackground";
+import UpdateNavigator from "@/components/UpdateNavigator/UpdateNavigator";
 
 import "./home.css";
 
@@ -104,17 +105,17 @@ const foundersData = [
 const cSectionsData = [
   {
     title: "[ C/Labs ]",
-    description: "Compound's living laboratory — where we explore and apply the potential of algae across industrial processes. From bioplastics and sustainable composites to food, cosmetics, and beyond, C/Labs transforms micro & macro algae into high-value, scalable solutions. By combining scientific experimentation with design thinking, we develop products and processes that are not only commercially viable but also contribute to a regenerative, low-carbon future.",
+    description: "Compound's living laboratory — we explore and apply the potential of algae across industrial processes. From bioplastics and sustainable composites to food, cosmetics, and beyond, C/Labs transforms micro & macro algae into high-value, scalable solutions.",
     href: "#"
   },
   {
     title: "[ C/Farm ]",
-    description: "Compound's living laboratory for sustainable seaweed cultivation. Here, we grow micro and macro algae using regenerative farming practices—both on land and at sea—to capture carbon, restore marine ecosystems, and provide high-quality biomass for industrial applications. C/Farm is where nature meets innovation, producing the raw materials that power our bioplastics, composites, food, cosmetics, and other circular solutions.",
+    description: "Compound's approach to sustainable seaweed cultivation. Here, we grow micro and macro algae using regenerative farming practices—both on land and at sea—to capture carbon, restore marine ecosystems, and provide high-quality biomass for industrial applications.",
     href: "#"
   },
   {
     title: "[ C/Commons ]",
-    description: "A visionary initiative that flows at the intersection of human livelihoods and ecological vitality, harnessing the power of the blue economy [ C/People ] and biodiversity [ C/Life ] to create shared prosperity. Rooted in the practice that people and nature thrive together, C/Commons transforms bold ideas into scalable solutions that ripple across communities and ecosystems.",
+    description: "A visionary initiative that flows at the intersection of human livelihoods and ecological vitality, harnessing the power of the blue economy [ C/People ] and biodiversity [ C/Life ] to create shared prosperity. ",
     href: "#"
   }
 ];
@@ -375,6 +376,10 @@ export default function Home() {
               ))}
             </div>
           </div>
+        </section>
+
+        <section className="latest-update">
+          <UpdateNavigator mode="latest" />
         </section>
 
       </div>

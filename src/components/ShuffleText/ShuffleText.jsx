@@ -55,7 +55,7 @@ const ShuffleText = ({
       chars.forEach((char) => {
         const originalLetter = char.textContent;
         let shuffleCount = 0;
-        const maxShuffles = 5;
+        const maxShuffles = 3;
 
         gsap.to(char, {
           opacity: 1,

@@ -1,14 +1,12 @@
 "use client";
 
 import { useRef } from "react";
-import Link from "next/link";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { ReactLenis } from "@studio-freight/react-lenis";
-import { allUpdates } from 'contentlayer/generated'
-import Marquee from "@/components/Marquee/Marquee";
 import ShuffleText from "@/components/ShuffleText/ShuffleText";
+import UpdateNavigator from "@/components/UpdateNavigator/UpdateNavigator";
 
 import "./archive.css";
 
@@ -17,20 +15,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function UpdatePageClient({ update }) {
     const container = useRef();
-
-    // Sort updates by date to determine chronological order
-    const sortedUpdates = [...allUpdates].sort((a, b) => new Date(a.date) - new Date(b.date));
-
-    // Find current update index
-    const currentIndex = sortedUpdates.findIndex(u => u._raw.flattenedPath === update._raw.flattenedPath);
-
-    // Determine next update: if on latest, go to previous; otherwise go to next
-    const isOnLatest = currentIndex === sortedUpdates.length - 1;
-    const nextUpdateIndex = isOnLatest ? currentIndex - 1 : currentIndex + 1;
-    const nextUpdate = sortedUpdates[nextUpdateIndex];
-
-    // Calculate archive number (starting from 100 + index)
-    const archiveNumber = nextUpdateIndex + 1;
 
     // controls pinning of the source section
     useGSAP(
@@ -102,7 +86,7 @@ export default function UpdatePageClient({ update }) {
                     </div>
                 </section>
 
-                <section className="sticky-archive">
+                <section className="sticky-archive" style={{ marginBottom: "100px" }}>
                     <div className="archive-col source">
                         <div className="container">
                             <div className="source-img">
@@ -137,21 +121,7 @@ export default function UpdatePageClient({ update }) {
                     </div>
                 </section>
 
-                <Link href={nextUpdate.url} className="next-archive-link">
-                    <section className="next-archive">
-                        <div className="next-archive-bg"></div>
-                        <div className="marquee-archive">
-                            <Marquee text={nextUpdate.title} />
-                        </div>
-                        <div className="container">
-                            <p className="primary">[ Update {archiveNumber} ]</p>
-                            <div className="next-archive-img">
-                                <img src={nextUpdate.thumbnailImage} alt="" />
-                            </div>
-                            <h2>{nextUpdate.title}</h2>
-                        </div>
-                    </section>
-                </Link>
+                <UpdateNavigator currentUpdate={update} mode="next" />
             </div>
         </ReactLenis>
     );
