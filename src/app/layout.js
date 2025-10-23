@@ -3,6 +3,7 @@ import ProgressBar from "@/components/ProgressBar/ProgressBar";
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
 import CTASection from "@/components/CTA/cta-section";
+import GSAPWrapper from "@/components/GSAPWrapper";
 
 import "./globals.css";
 
@@ -45,13 +46,15 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Suspense>
-          <ProgressBar />
-        </Suspense>
-        <Navbar />
-        {children}
-        <CTASection />
-        <Footer />
+        <GSAPWrapper>
+          <Suspense>
+            <ProgressBar />
+          </Suspense>
+          <Navbar />
+          {children}
+          <CTASection />
+          <Footer />
+        </GSAPWrapper>
       </body>
     </html>
   );

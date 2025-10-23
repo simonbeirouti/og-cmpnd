@@ -14,9 +14,6 @@ import UpdateNavigator from "@/components/UpdateNavigator/UpdateNavigator";
 
 import "./home.css";
 
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
-
 const caseStudiesData = [
   {
     title: "Micro & Macro Algae farming",

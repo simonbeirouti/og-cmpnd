@@ -5,8 +5,6 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import SplitType from "split-type";
 
-gsap.registerPlugin(ScrollTrigger);
-
 const ShuffleText = ({
   text,
   as: Component = "div",
@@ -17,6 +15,7 @@ const ShuffleText = ({
   const containerRef = useRef(null);
   const [isDesktop, setIsDesktop] = useState(false);
   const splitInstance = useRef(null);
+  const scrollTriggerRef = useRef(null);
 
   useEffect(() => {
     const checkSize = () => {
@@ -79,7 +78,12 @@ const ShuffleText = ({
     };
 
     if (triggerOnScroll) {
-      ScrollTrigger.create({
+      // Kill existing ScrollTrigger if it exists
+      if (scrollTriggerRef.current) {
+        scrollTriggerRef.current.kill();
+      }
+
+      scrollTriggerRef.current = ScrollTrigger.create({
         trigger: containerRef.current,
         start: "top bottom-=100",
         onEnter: () => {
@@ -94,8 +98,12 @@ const ShuffleText = ({
     return () => {
       if (splitInstance.current) {
         splitInstance.current.revert();
+        splitInstance.current = null;
       }
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      if (scrollTriggerRef.current) {
+        scrollTriggerRef.current.kill();
+        scrollTriggerRef.current = null;
+      }
     };
   }, [text, triggerOnScroll, isDesktop]);
 

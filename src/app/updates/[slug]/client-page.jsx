@@ -10,9 +10,6 @@ import UpdateNavigator from "@/components/UpdateNavigator/UpdateNavigator";
 
 import "./archive.css";
 
-gsap.registerPlugin(useGSAP);
-gsap.registerPlugin(ScrollTrigger);
-
 export default function UpdatePageClient({ update }) {
     const container = useRef();
 
