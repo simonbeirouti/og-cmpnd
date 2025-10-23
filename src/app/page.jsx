@@ -254,7 +254,7 @@ export default function Home() {
           <div className="geo-bg">
             <GeometricBackground />
           </div>
-          <Marquee text="Carbondioxide is our friend - We just need to harness it - " />
+          <Marquee text="ocean intelligence x human creativity x" />
           <div className="intro-container">
             <div className="container">
               <div className="col">
