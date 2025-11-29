@@ -36,6 +36,11 @@ const Navbar = () => {
   const navItems = [
     {
       type: 'link',
+      href: '/mdw-proposal',
+      label: 'MDW Proposal'
+    },
+    {
+      type: 'link',
       href: '/updates',
       label: 'Updates'
     },
