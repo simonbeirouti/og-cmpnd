@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
+    "@libsql/client": "^0.15.15",
     "@studio-freight/react-lenis": "^0.0.47",
     "contentlayer": "^0.3.4",
     "date-fns": "^4.1.0",
+    "dotenv": "^17.2.3",
     "gsap": "^3.12.7",
     "lottie-web": "^5.12.2",
     "next": "^15.5.0",

@@ -1,6 +1,6 @@
 import "./Footer.css";
 
-const Footer = () => {
+export default function Footer() {
   return (
     <>
       <section className="footer-area"></section>
@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="footer-top">
             <h3 className="footer-copy">
               Designing the future:
-              <br/> 
+              <br />
               Ocean intelligence x human creativity.
             </h3>
           </div>
@@ -27,5 +27,3 @@ const Footer = () => {
     </>
   );
 };
-
-export default Footer;

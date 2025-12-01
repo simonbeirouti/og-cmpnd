@@ -1,6 +1,8 @@
 import ShuffleText from "@/components/ShuffleText/ShuffleText";
 import Image from "next/image";
 import "./proposal.css";
+import SignupForm from "./SignupForm";
+import { getInterestedCount } from "./actions";
 
 const proposalItems = [
     {
@@ -35,7 +37,8 @@ const proposalItems = [
     }
 ];
 
-export default function MDWProposal() {
+export default async function MDWProposal() {
+    const initialCount = await getInterestedCount();
     return (
         <section className="updates">
             <div className="container">
@@ -77,6 +80,10 @@ export default function MDWProposal() {
                                 </div>
                             </div>
                         ))}
+                    </div>
+
+                    <div className="signup-section-wrapper">
+                        <SignupForm initialCount={initialCount} />
                     </div>
                 </div>
             </div>
