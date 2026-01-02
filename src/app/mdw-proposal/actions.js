@@ -2,7 +2,7 @@
 
 import { addSignup, getSignupCount } from '@/lib/db';
 import { revalidatePath } from 'next/cache';
-import { addToAudience } from '../actions';
+// import { addToAudience } from '../actions';
 
 export async function submitSignup(formData) {
     const name = formData.get('name');
@@ -16,12 +16,12 @@ export async function submitSignup(formData) {
         await addSignup(name, email);
 
         // Add to Resend audience
-        try {
-            await addToAudience({ email, name });
-        } catch (resendError) {
-            console.error('Failed to add to Resend audience:', resendError);
-            // We don't fail the request if Resend fails, just log it
-        }
+        // try {
+        //     await addToAudience({ email, name });
+        // } catch (resendError) {
+        //     console.error('Failed to add to Resend audience:', resendError);
+        //     // We don't fail the request if Resend fails, just log it
+        // }
 
         revalidatePath('/mdw-proposal');
         return { success: true };
