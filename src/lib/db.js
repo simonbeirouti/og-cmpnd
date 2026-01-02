@@ -26,6 +26,20 @@ export async function initDb() {
   await client.execute(`
     INSERT OR IGNORE INTO stats (key, value) VALUES ('signup_count', 0)
   `);
+
+  await client.execute(`
+    CREATE TABLE IF NOT EXISTS rate_limits (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      ip TEXT NOT NULL,
+      action TEXT NOT NULL,
+      created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+    )
+  `);
+
+  // Clean up old rate limits
+  await client.execute(`
+    DELETE FROM rate_limits WHERE created_at < datetime('now', '-1 day')
+  `);
 }
 
 export async function addSignup(name, email) {
@@ -57,4 +71,32 @@ export async function getSignupCount() {
     return result.rows[0].value;
   }
   return 0;
+}
+
+export async function checkRateLimit(ip) {
+  const windowMinutes = 10;
+  const maxRequests = 5;
+  const action = 'signup';
+
+  // Count requests from this IP in the last window
+  const result = await client.execute({
+    sql: `SELECT COUNT(*) as count FROM rate_limits 
+          WHERE ip = ? AND action = ? 
+          AND created_at > datetime('now', '-' || ? || ' minutes')`,
+    args: [ip, action, windowMinutes]
+  });
+
+  const count = result.rows[0].count;
+
+  if (count >= maxRequests) {
+    return false;
+  }
+
+  // Record this request
+  await client.execute({
+    sql: 'INSERT INTO rate_limits (ip, action) VALUES (?, ?)',
+    args: [ip, action]
+  });
+
+  return true;
 }

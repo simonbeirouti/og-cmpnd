@@ -1,7 +1,8 @@
 'use server';
 
-import { addSignup, getSignupCount } from '@/lib/db';
+import { addSignup, getSignupCount, checkRateLimit } from '@/lib/db';
 import { revalidatePath } from 'next/cache';
+import { headers } from 'next/headers';
 // import { addToAudience } from '../actions';
 
 export async function submitSignup(formData) {
@@ -10,6 +11,17 @@ export async function submitSignup(formData) {
 
     if (!name || !email) {
         return { error: 'Name and email are required' };
+    }
+
+    // Rate Limiting Check
+    const headersList = await headers();
+    const forwardedFor = headersList.get('x-forwarded-for');
+    const ip = forwardedFor ? forwardedFor.split(',')[0] : 'unknown';
+
+    // In dev, ip might be 'unknown' or '::1', which is fine.
+    const isAllowed = await checkRateLimit(ip);
+    if (!isAllowed) {
+        return { error: 'Too many requests. Please try again later.' };
     }
 
     try {
