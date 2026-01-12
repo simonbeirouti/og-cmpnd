@@ -3,6 +3,7 @@ import Image from "next/image";
 import "./proposal.css";
 import SignupForm from "./SignupForm";
 import { getInterestedCount } from "./actions";
+import MDWCountdown from "@/components/MDWCountdown/MDWCountdown";
 
 const proposalItems = [
     {
@@ -46,6 +47,8 @@ export default async function MDWProposal() {
                     <section className="header-section">
                         <ShuffleText as="h1" text="MDW Proposal" />
                     </section>
+
+                    <MDWCountdown />
 
                     <div className="mdw-intro-container">
                         <div className="mdw-intro-inner">
